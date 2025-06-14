@@ -135,6 +135,21 @@ def main():
         target_modules=["up_proj", "down_proj", "gate_proj", "k_proj", "q_proj", "v_proj", "o_proj"]
     )
     peft_model = get_peft_model(sft_model, peft_config)
+
+    def print_trainable_parameters(model):
+        """
+        Prints the number of trainable parameters in the model.
+        """
+        trainable_params = 0
+        all_param = 0
+        for _, param in model.named_parameters():
+            all_param += param.numel()
+            if param.requires_grad:
+                trainable_params += param.numel()
+        print(
+            f"trainable params: {trainable_params} || all params: {all_param} || trainable%: {100 * trainable_params / all_param}"
+        )
+    print_trainable_parameters(peft_model)
     
     # 5. 訓練資料路徑（依據 NER 類型串成檔名）
     types_str = "_".join(specified_types_for_this_run)
