@@ -125,6 +125,8 @@
 
     - ```adapter_step``` is chosen to be the checkpoint with lowest valid loss during fine-tuning.
 
+- Running times of all programs should be less than 10 mins with a NVIDIA GeForce RTX 4090.
+
 - Copy and paste all subprediction files into a complete task2 prediction file.
 
 - ```merge_ner.py```: Extract predictions of specific entity type from source file and use them to replace predictions of the same entity type in base file. (for ensemble of models tuned by different configurations.)
