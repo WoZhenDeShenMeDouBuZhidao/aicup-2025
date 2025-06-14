@@ -152,7 +152,7 @@ def main():
         per_device_eval_batch_size=2,
         gradient_accumulation_steps=2,
         optim="paged_adamw_32bit",
-        num_train_epochs=20,
+        num_train_epochs=10,
         logging_strategy="epoch",
         logging_steps=1,
         eval_strategy="epoch",
