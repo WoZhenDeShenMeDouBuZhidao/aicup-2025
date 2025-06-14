@@ -86,7 +86,7 @@
 
 - ```ner_finetune/ner_fewshot_finetune.sh```: Start fine-tuning.
 
-    - ```aicup-2025/ner_finetune/ner_fewshot_finetune.py```: Fine-tuning code.
+    - ```ner_finetune/ner_fewshot_finetune.py```: Fine-tuning code.
 
     - Before fine-tuning, train/valid dataset with corresponding entity types is needed. (ex. ```{train, valid}/ner_finetune_trainset_MEDICAL_RECORD_NUMBER_ID_NUMBER.jsonl``` is needed before you run ```python ner_fewshot_finetune.py --ner_types 'MEDICAL_RECORD_NUMBER' 'ID_NUMBER'```)
 
